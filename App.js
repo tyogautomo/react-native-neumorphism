@@ -45,6 +45,18 @@ const App = () => {
     style: { position: 'absolute' }
   }
 
+  const smallBottomShad = {
+    width: 100,
+    height: 60,
+    color: bottomShadow.color,
+    border: 15,
+    radius: bottomShadow.opacity,
+    opacity: 0.1,
+    x: 3,
+    y: 3,
+    style: { position: 'absolute' }
+  }
+
   const onPressBoxIn = () => {
     setBottomShadow({ color: "#fff", opacity: 0.4 })
     setUpperShadow({ color: "#000", opacity: 0.1 })
