@@ -6,109 +6,105 @@
  * @flow
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
   StatusBar,
+  TouchableWithoutFeedback
 } from 'react-native';
+import { BoxShadow } from 'react-native-shadow';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const App = () => {
 
-const App: () => React$Node = () => {
+  const [bottomShadow, setBottomShadow] = useState({ color: "#000", opacity: 0.1 });
+  const [upperShadow, setUpperShadow] = useState({ color: "#fff", opacity: 0.4 });
+
+  const bottomShad = {
+    width: 236,
+    height: 236,
+    color: bottomShadow.color,
+    border: 15,
+    radius: bottomShadow.opacity,
+    opacity: 0.1,
+    x: 3,
+    y: 3,
+    style: { position: 'absolute' }
+  }
+
+  const whiteShad = {
+    width: 236,
+    height: 236,
+    color: upperShadow.color,
+    border: 15,
+    radius: 8,
+    opacity: upperShadow.opacity,
+    x: -3,
+    y: -3,
+    style: { position: 'absolute' }
+  }
+
+  const onPressBoxIn = () => {
+    setBottomShadow({ color: "#fff", opacity: 0.4 })
+    setUpperShadow({ color: "#000", opacity: 0.1 })
+  }
+
+  const onPressBoxOut = () => {
+    setBottomShadow({ color: "#000", opacity: 0.1 })
+    setUpperShadow({ color: "#fff", opacity: 0.4 })
+  }
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
+      <View style={styles.body}>
+        <BoxShadow setting={bottomShad} />
+        <BoxShadow setting={whiteShad} />
+        <TouchableWithoutFeedback>
+          <View style={styles.board}>
+            <Text style={styles.text1}>Neumorphism</Text>
+            <Text style={styles.text2}>Neumorphism</Text>
           </View>
-        </ScrollView>
-      </SafeAreaView>
+        </TouchableWithoutFeedback>
+      </View>
     </>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
   body: {
-    backgroundColor: Colors.white,
+    backgroundColor: '#DAE0E8',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  board: {
+    width: 250,
+    height: 250,
+    backgroundColor: '#DAE0E8',
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
+  text1: {
+    fontFamily: 'Bebas-Regular',
+    fontSize: 40,
+    color: '#DAE0E8',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 3,
+    textShadowColor: 'rgba(0,0,0,0.1)',
+    position: 'absolute'
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
+  text2: {
+    fontFamily: 'Bebas-Regular',
+    fontSize: 40,
+    color: '#DAE0E8',
+    textShadowOffset: { width: -2, height: -2 },
+    textShadowRadius: 3,
+    textShadowColor: 'rgba(255,255,255,0.2)',
+    position: 'absolute'
+  }
+})
 
 export default App;

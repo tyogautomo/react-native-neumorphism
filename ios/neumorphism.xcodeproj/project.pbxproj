@@ -20,6 +20,7 @@
 		51182B8D7846390DEF765B07 /* libPods-neumorphism.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44BD05A4D67E7FD2702A6650 /* libPods-neumorphism.a */; };
 		9AE420AAED651A2AA823E53C /* libPods-neumorphism-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A049729F922C13A31974279 /* libPods-neumorphism-tvOS.a */; };
 		D25EF5DE9C690A4F32736A1B /* libPods-neumorphismTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F82C428F304F307BA35350F /* libPods-neumorphismTests.a */; };
+		27E06E377C2F44C993DBCDAC /* Bebas-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F8DBF6F1153462B91A364A0 /* Bebas-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E6447564AE3196946621FE09 /* Pods-neumorphism.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-neumorphism.release.xcconfig"; path = "Target Support Files/Pods-neumorphism/Pods-neumorphism.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		4F8DBF6F1153462B91A364A0 /* Bebas-Regular.ttf */ = {isa = PBXFileReference; name = "Bebas-Regular.ttf"; path = "../app/assets/Fonts/Bebas-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D308FF37BC89DB9ED69091E9 /* Pods */,
+				9F420557BF21403F9711D0D1 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +200,15 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		9F420557BF21403F9711D0D1 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				4F8DBF6F1153462B91A364A0 /* Bebas-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -285,7 +297,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -338,6 +350,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				27E06E377C2F44C993DBCDAC /* Bebas-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
